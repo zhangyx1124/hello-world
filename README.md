@@ -1,1 +1,2 @@
-# hello-world
+＃你好，世界
+学习的GitHub上，从这里开始
