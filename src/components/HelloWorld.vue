@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1 @click="toast">{{ msg }}</h1>
+    <div>hello</div>
   </div>
 </template>
 
