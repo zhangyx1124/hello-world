@@ -1,16 +1,16 @@
 # hello-world
 
-## Project setup
+## Project setup 项目依赖加载
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compiles and hot-reloads for development 项目运行
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compiles and minifies for production 打包项目
 ```
 npm run build
 ```

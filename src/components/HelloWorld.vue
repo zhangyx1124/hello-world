@@ -3,6 +3,8 @@
     <h1 >{{ msg }}</h1>
     <button @click="toast('点击显示提示')">点击显示提示</button>
     <button @click="showLoad">显示/隐藏 加载动画</button>
+    <zyx-button @zyxclick="clickBtn" color="green">button</zyx-button>
+    <input v-focus />
   </div>
 </template>
 
@@ -24,6 +26,9 @@ export default {
     showLoad(){
       this.show=!this.show
       this.$loading(this.show,'加载中。。。')
+    },
+    clickBtn(){
+      console.log("zyxclick")
     }
   }
 }

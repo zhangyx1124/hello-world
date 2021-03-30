@@ -5,7 +5,7 @@ const Toast = {};
 // 注册Toast
 Toast.install = function (Vue) {
    
-    //生成一个Vue的子类构造函数
+    //Vue.extend返回一个Vue的子类，既然是子类，就没有办法直接通过他使用Vue原型上的方法，所以需要new一个实例出来使用
     const ToastConstructor = Vue.extend(ToastComponent)
     
     // 生成一个该子类的实例
@@ -13,6 +13,7 @@ Toast.install = function (Vue) {
 
     // 将这个实例挂载在我创建的div上
     // 并将此div加入全局挂载点内部
+    //instance实例必须挂载在一个节点上才能进行后续操作
     instance.$mount(document.createElement('div'))
     document.body.appendChild(instance.$el)
     
