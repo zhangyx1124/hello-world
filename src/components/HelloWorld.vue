@@ -1,7 +1,8 @@
 <template>
   <div class="hello">
-    <h1 @click="toast">{{ msg }}</h1>
-    <div>hello</div>
+    <h1 >{{ msg }}</h1>
+    <button @click="toast('点击显示提示')">点击显示提示</button>
+    <button @click="showLoad">显示/隐藏 加载动画</button>
   </div>
 </template>
 
@@ -11,9 +12,18 @@ export default {
   props: {
     msg: String
   },
+  data(){
+    return{
+      show:false
+    }
+  },
   methods:{
-    toast(){
-      this.$toast("hello world")
+    toast(str){
+      this.$toast(str)
+    },
+    showLoad(){
+      this.show=!this.show
+      this.$loading(this.show,'加载中。。。')
     }
   }
 }
