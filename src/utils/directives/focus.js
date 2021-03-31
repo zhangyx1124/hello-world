@@ -1,10 +1,10 @@
 import Vue from 'vue'
 const focus = Vue.directive('focus', {
   // bind 只调用一次，指令第一次绑定到元素时调用。在这里可以进行一次性的初始化设置
-  bind: function (el, binding) {
+  bind: function (el, binding,VNode) {
     console.log("el", el)
     console.log("binding", binding)
-    
+    console.log("VNode",VNode)
   },
   // inserted 被绑定元素插入父节点时调用 (仅保证父节点存在，但不一定已被插入文档中)
   inserted: function (el) {

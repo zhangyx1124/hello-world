@@ -1,37 +1,46 @@
 <template>
   <div class="hello">
-    <h1 >{{ msg }}</h1>
-    <button @click="toast('点击显示提示')">点击显示提示</button>
-    <button @click="showLoad">显示/隐藏 加载动画</button>
-    <zyx-button @zyxclick="clickBtn" color="green">button</zyx-button>
+    <h1>{{ msg }}</h1>
+    <div>
+      <span>插件示例（方法调用）：</span>
+      <button @click="toast('点击显示提示')">点击显示提示</button>
+      <button @click="showLoad">显示/隐藏 加载动画</button>
+    </div>
+    <empty />
+    <div>
+      <span>插件示例（组件调用）：</span>
+      <zyx-button @zyxclick="clickBtn" color="green">button</zyx-button>
+      <zyx-button @zyxclick="toast('点击显示提示')">点击显示提示</zyx-button>
+    </div>
+    <empty />
     <input v-focus />
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: "HelloWorld",
   props: {
-    msg: String
+    msg: String,
   },
-  data(){
-    return{
-      show:false
-    }
+  data() {
+    return {
+      show: false,
+    };
   },
-  methods:{
-    toast(str){
-      this.$toast(str)
+  methods: {
+    toast(str) {
+      this.$toast(str);
     },
-    showLoad(){
-      this.show=!this.show
-      this.$loading(this.show,'加载中。。。')
+    showLoad() {
+      this.show = !this.show;
+      this.$loading(this.show, "加载中。。。");
     },
-    clickBtn(){
-      console.log("zyxclick")
-    }
-  }
-}
+    clickBtn() {
+      console.log("zyxclick");
+    },
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
