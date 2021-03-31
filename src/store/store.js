@@ -4,7 +4,15 @@ Vue.use(Vuex)
 let store = new Vuex.Store({
   state: {
     count: 0,
-    permissionList: ['one', 'two', 'three']
+    permissionList: [
+      'one', 'two', 'three'
+    ],
+    router: []
+  },
+  getters: {
+    getRouter(state) {
+      return state.router
+    }
   },
   mutations: {
     INCREMENT: (state, payload) => {
