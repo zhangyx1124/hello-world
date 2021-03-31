@@ -13,19 +13,35 @@
       <zyx-button @zyxclick="toast('点击显示提示')">点击显示提示</zyx-button>
     </div>
     <empty />
-    <input v-focus />
+    <div>
+      <span>自定义指令：</span>
+      <input v-focus />
+    </div>
+
+    <count-store />
+    <empty />
+    <div>通过指令设置权限</div>
+    <ul>
+      <li v-for="(item, index) in dataList" :key="index" v-permission="item">
+        {{ item }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
+import ZyxButton from "../utils/plugins/button/ZyxButton.vue";
+import CountStore from "./CountStore.vue";
 export default {
   name: "HelloWorld",
   props: {
     msg: String,
   },
+  components: { CountStore, ZyxButton },
   data() {
     return {
       show: false,
+      dataList: ["one", "twww", "three", "www", "asdad"],
     };
   },
   methods: {
